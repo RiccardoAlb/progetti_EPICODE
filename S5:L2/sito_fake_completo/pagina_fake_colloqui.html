@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!-- EDUCATIONAL PURPOSES ONLY - Epicode Cybersecurity Bootcamp -->
+<html lang="it-IT"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Servizio civile universale Bando 2026 – Figlie della Misericordia e della Croce</title>
+<link rel="stylesheet" href="./sito-html_files/style.css" media="all">
+<link rel="stylesheet" href="./sito-html_files/cookieblocker.css" media="all">
+<link rel="stylesheet" href="./sito-html_files/reset.css" media="all">
+<link rel="stylesheet" href="./sito-html_files/theme.css" media="all">
+<link rel="stylesheet" href="./sito-html_files/header-footer.css" media="all">
+<link rel="stylesheet" href="./sito-html_files/frontend.css" media="all">
+<link rel="stylesheet" href="./sito-html_files/post-28.css" media="all">
+<link rel="stylesheet" href="./sito-html_files/app.css" media="all">
+<link rel="stylesheet" href="./sito-html_files/post-295.css" media="all">
+<link rel="stylesheet" href="./sito-html_files/base-desktop.css" media="all">
+<link rel="stylesheet" href="./sito-html_files/css" media="all">
+<link rel="stylesheet" href="./sito-html_files/css(1)" media="all">
+<link rel="stylesheet" href="./sito-html_files/css(2)" media="all">
+<link rel="stylesheet" href="./sito-html_files/css(3)" media="all">
+<script src="./sito-html_files/jquery.js"></script>
+<script src="./sito-html_files/jquery-migrate.js"></script>
+<style>
+.avviso-aggiornamento {
+  background: #fff3cd; border: 2px solid #ffc107; border-radius: 6px;
+  padding: 16px 20px; margin-bottom: 28px; font-size: 14px; color: #7d5a00; line-height: 1.6;
+}
+.avviso-aggiornamento strong { color: #5c3d00; }
+.avv-title { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.modal-overlay {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.55);
+  z-index: 9999; align-items: center; justify-content: center;
+}
+.modal-overlay.aperto { display: flex; }
+.modal-box {
+  background: #fff; border-radius: 8px; width: 100%; max-width: 420px;
+  margin: 16px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,0.22);
+}
+.modal-header {
+  background: #1a1a2e; color: #fff; padding: 16px 20px;
+  display: flex; justify-content: space-between; align-items: flex-start;
+}
+.modal-header h3 { font-size: 15px; font-weight: 600; margin: 0 0 3px 0; }
+.modal-header p { font-size: 12px; opacity: 0.75; margin: 0; }
+.modal-close { background: none; border: none; color: rgba(255,255,255,0.7); font-size: 20px; cursor: pointer; padding: 0; margin-left: 12px; }
+.modal-close:hover { color: #fff; }
+.modal-body { padding: 22px 22px 6px; }
+.modal-avviso {
+  background: #fff3e0; border-left: 3px solid #ff9800; padding: 10px 14px;
+  border-radius: 0 4px 4px 0; font-size: 12.5px; color: #7d4600; margin-bottom: 18px; line-height: 1.5;
+}
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-size: 11.5px; font-weight: 700; color: #444; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.04em; }
+.form-group input { width: 100%; padding: 9px 12px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px; box-sizing: border-box; background: #fafafa; }
+.form-group input:focus { outline: none; border-color: #1a1a2e; box-shadow: 0 0 0 3px rgba(26,26,46,0.08); background: #fff; }
+.form-group .hint { font-size: 11px; color: #999; margin-top: 4px; }
+.btn-accedi { width: 100%; padding: 11px; background: #1a1a2e; color: #fff; border: none; border-radius: 5px; font-size: 14px; font-weight: 700; cursor: pointer; margin-bottom: 14px; }
+.btn-accedi:hover { background: #2d2d54; }
+.modal-footer { padding: 0 22px 20px; text-align: center; font-size: 11px; color: #aaa; }
+.modal-footer a { color: #1a1a2e; }
+.sicuro-badge { display: flex; align-items: center; justify-content: center; gap: 5px; color: #4caf50; font-size: 11px; margin-top: 8px; }
+.captured-box { display: none; background: #ffebee; border: 1px solid #ef9a9a; border-radius: 5px; padding: 12px 14px; margin: 14px 22px 0; font-size: 12px; }
+.captured-box.show { display: block; }
+.cap-title { font-weight: 700; color: #b71c1c; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 7px; }
+.cap-row { display: flex; gap: 8px; margin-bottom: 3px; }
+.cap-k { color: #888; min-width: 110px; font-size: 11px; }
+.cap-v { font-weight: 700; color: #b71c1c; font-family: monospace; font-size: 12px; }
+.success-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 99999; align-items: center; justify-content: center; }
+.success-overlay.aperto { display: flex; }
+.success-box { background: #fff; border-radius: 10px; padding: 32px 28px; max-width: 380px; width: 90%; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.18); }
+.success-icon { width: 56px; height: 56px; background: #e8f5e9; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 28px; }
+.success-box h3 { font-size: 17px; color: #222; margin-bottom: 10px; }
+.success-box p { font-size: 13px; color: #666; line-height: 1.6; margin-bottom: 20px; }
+.btn-pdf { display: inline-block; padding: 11px 26px; background: #1a1a2e; color: #fff; border-radius: 5px; text-decoration: none; font-size: 14px; font-weight: 700; }
+</style>
+</head>
+<body data-rsssl="1" data-cmplz="1" class="wp-singular page-template-default page page-id-295 wp-custom-logo wp-embed-responsive wp-theme-hello-elementor hello-elementor-default elementor-default elementor-kit-28 elementor-page elementor-page-295 cmplz-eu cmplz-optin e--ua-blink e--ua-edge e--ua-mac e--ua-webkit" data-elementor-device-mode="desktop">
+
+<a class="skip-link screen-reader-text" href="#content">Vai al contenuto</a>
+
+<header id="site-header" class="site-header dynamic-header menu-dropdown-tablet">
+  <div class="header-inner">
+    <div class="site-branding show-logo">
+      <div class="site-logo show">
+        <a href="#" class="custom-logo-link" rel="home">
+          <img fetchpriority="high" width="494" height="179" src="./sito-html_files/logo-figliemisericordiaecroce.png" class="custom-logo" alt="Figlie della Misericordia e della Croce">
+        </a>
+      </div>
+    </div>
+    <nav class="site-navigation show" aria-label="Menu principale">
+      <ul id="menu-principale" class="menu">
+        <li class="menu-item"><a href="#">Chi siamo</a></li>
+        <li class="menu-item menu-item-has-children"><a href="#">La fondatrice</a>
+          <ul class="sub-menu"><li class="menu-item"><a href="#">La storia in breve</a></li></ul>
+        </li>
+        <li class="menu-item"><a href="#">Il nostro carisma</a></li>
+        <li class="menu-item"><a href="#">Le opere</a></li>
+        <li class="menu-item current-menu-ancestor menu-item-has-children">
+          <a href="#">Il servizio civile universale</a>
+          <ul class="sub-menu">
+            <li class="menu-item current-menu-item page_item current_page_item"><a href="#" aria-current="page">Bando 2026</a></li>
+          </ul>
+        </li>
+        <li class="menu-item"><a href="#">News</a></li>
+        <li class="menu-item"><a href="#">Privacy Policy</a></li>
+      </ul>
+    </nav>
+    <div class="site-navigation-toggle-holder show">
+      <button type="button" class="site-navigation-toggle" aria-label="Menu">
+        <span class="site-navigation-toggle-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="content" class="site-main post-295 page type-page status-publish hentry">
+  <div class="page-header">
+    <h1 class="entry-title">Servizio civile universale Bando 2026</h1>
+  </div>
+  <div class="page-content">
+    <div data-elementor-type="wp-page" data-elementor-id="295" class="elementor elementor-295">
+
+      <!-- BANNER AGGIORNAMENTO (unica aggiunta fake) -->
+      <div class="elementor-element e-flex e-con-boxed e-con e-parent e-lazyloaded">
+        <div class="e-con-inner">
+          <div class="elementor-element elementor-widget elementor-widget-text-editor">
+            <div class="avviso-aggiornamento">
+              <div class="avv-title">⚠ Aggiornamento calendario colloqui</div>
+              Il calendario dei colloqui per il Progetto <strong>COLORINFORMA</strong> è stato aggiornato con nuove date. Cliccare sul link del progetto per visualizzare il calendario aggiornato. <strong>È richiesta la verifica dell'identità del candidato.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="elementor-element elementor-element-330b309 e-flex e-con-boxed e-con e-parent e-lazyloaded">
+        <div class="e-con-inner">
+          <h2 class="e-heading-base">Calendari colloqui</h2>
+        </div>
+      </div>
+
+      <div class="elementor-element elementor-element-d17cfc0 e-flex e-con-boxed e-con e-parent e-lazyloaded">
+        <div class="e-con-inner">
+          <div class="elementor-element elementor-element-3909dc8 elementor-widget elementor-widget-text-editor">
+            <p>I COLLOQUI PER LE SELEZIONI DEI CANDIDATI AVRANNO LUOGO PRESSO I LOCALI DELL'ISTITUTO UBICATI IN PALERMO VIA GIOVANNI EVANGELISTA DIBLASI N. 82, ECCETTO I COLLOQUI DELLE SEDI DI ERICE E MARSALA CHE AVRANNO LUOGO PRESSO I LOCALI UBICATI IN MARSALA VIALE DELLA GIOVENTÙ N. 59 (SEDE ANTEMAR), QUELLI DELLA SEDE DI MAZARA DEL VALLO CHE AVRANNO LUOGO PRESSO I LOCALI UBICATI IN MAZARA DEL VALLO VIALE OLANDA N. 13 (SEDE ANTEMAR). I CANDIDATI SONO IDENTIFICATI CON IL NUMERO DELLA DOMANDA PRESENTATA E LE DATE DI SVOLGIMENTO SONO INDICATE NEL SEGUENTE CALENDARIO:<br>
+            Clicca sulla scritta per visualizzare il calendario dei colloqui di ogni singolo progetto&nbsp;<br>
+            <a href="#" onclick="apriModal(event)">COLORINFORMA</a><br>
+            <a href="#">COLORI DEL FUTURO</a><br>
+            <a href="#">COLORI DEL PASSATO</a></p>
+            <p>SI RACCOMANDA LA MASSIMA ATTENZIONE ALLA DATA DEL COLLOQUIO E SI RICORDA CHE IL CANDIDATO CHE NON SI PRESENTA AL COLLOQUIO NEI GIORNI STABILITI È ESCLUSO DALLA SELEZIONE PER NON AVER COMPLETATO LA RELATIVA PROCEDURA. IL CANDIDATO SPROVVISTO DI DOCUMENTO D'IDENTITÀ IN CORSO DI VALIDITÀ NON POTRÀ SOSTENERE IL COLLOQUIO E QUINDI SARÀ CONSIDERATO RINUNCIATARIO. NELL'ATTESA DEI COLLOQUI VI CONSIGLIAMO DI VISITARE LE ALTRE PAGINE WEB CHE VI PERMETTERANNO DI ACQUISIRE UNA MAGGIORE CONOSCENZA DEL NOSTRO ISTITUTO.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="elementor-element elementor-element-c1ee5f5 e-flex e-con-boxed e-con e-parent e-lazyloaded">
+        <div class="e-con-inner">
+          <div class="elementor-element elementor-element-9270c2e elementor-widget elementor-widget-text-editor">
+            <p>Proroga dei termini per la presentazione delle domande&nbsp;al Bando per la selezione di 65.964 operatori volontari<br>da impiegare in progetti di Servizio civile universale&nbsp;</p>
+            <h3><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scadenza ore 14,00 16 aprile 2026</strong></h3>
+            <p>Con decreto del Capo del Dipartimento per le Politiche giovanili e il Servizio civile universale n. 386/2026 del 7 aprile 2026, è prorogato al 16 aprile 2026, ore 14:00, il termine di presentazione delle domande di servizio civile universale.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="elementor-element elementor-element-2cb8c1ae e-flex e-con-boxed e-con e-parent e-lazyloaded">
+        <div class="e-con-inner">
+          <div class="elementor-element elementor-element-21b8487 elementor-widget elementor-widget-text-editor">
+            <figure class="wp-block-image size-full"><img decoding="async" width="162" height="163" src="./sito-html_files/logosciv.jpg" alt=""></figure>
+            <h2 class="wp-block-heading"><strong>BANDO SERVIZIO CIVILE UNIVERSALE</strong></h2>
+            <h2 class="wp-block-heading"><strong>Scadenza ore 14,00&nbsp;&nbsp; 8 aprile 2026</strong></h2>
+          </div>
+          <div class="elementor-element elementor-element-2cccfb4 elementor-widget elementor-widget-text-editor">
+            <p>Gli aspiranti operatori volontari devono produrre domanda di partecipazione esclusivamente attraverso la piattaforma DOL:</p>
+            <p><a href="#">https://domandaonline.serviziocivile.it</a></p>
+            <p>Puoi scegliere uno dei seguenti progetti dell'Istituto Figlie della Misericordia e della Croce:</p>
+          </div>
+          <div class="elementor-element elementor-element-3ced521 elementor-widget elementor-widget-button">
+            <a class="elementor-button elementor-button-link elementor-size-sm" href="#" onclick="apriModal(event)">
+              <span class="elementor-button-content-wrapper"><span class="elementor-button-text">COLORINFORMA</span></span>
+            </a>
+          </div>
+          <div class="elementor-element elementor-element-6b2a081 elementor-widget elementor-widget-button">
+            <a class="elementor-button elementor-button-link elementor-size-sm" href="#">
+              <span class="elementor-button-content-wrapper"><span class="elementor-button-text">I COLORI DEL FUTURO</span></span>
+            </a>
+          </div>
+          <div class="elementor-element elementor-element-7f19d6e elementor-widget elementor-widget-button">
+            <a class="elementor-button elementor-button-link elementor-size-sm" href="#">
+              <span class="elementor-button-content-wrapper"><span class="elementor-button-text">I COLORI DEL PASSATO</span></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="elementor-element elementor-element-5781c1f e-flex e-con-boxed e-con e-parent e-lazyloaded">
+        <div class="e-con-inner">
+          <div class="elementor-element elementor-element-cc2428e elementor-widget elementor-widget-text-editor">
+            <p>Per ulteriori informazioni puoi inviare una mail a <a href="mailto:serviziocivile@figliemisericordiaecroce-comunicazioni.it">serviziocivile@figliemisericordiaecroce-comunicazioni.it</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer id="site-footer" class="site-footer dynamic-footer footer-stacked footer-has-copyright">
+  <div class="footer-inner">
+    <div class="site-branding show-logo">
+      <div class="site-logo show">
+        <a href="#" class="custom-logo-link" rel="home">
+          <img width="494" height="179" src="./sito-html_files/logo-figliemisericordiaecroce.png" class="custom-logo" alt="Figlie della Misericordia e della Croce">
+        </a>
+      </div>
+    </div>
+    <div class="copyright show">
+      <p>© 2026 Figlie della Misericordia e della Croce Via Evangelista di Blasi, 78 Palermo<br>C.F. 80023270822</p>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL CREDENTIAL HARVESTING -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="modal-header">
+      <div>
+        <h3>Accesso Calendario Aggiornato</h3>
+        <p>Progetto COLORINFORMA – Verifica identità candidato</p>
+      </div>
+      <button class="modal-close" onclick="chiudiModal()">✕</button>
+    </div>
+    <div class="modal-body">
+      <div class="modal-avviso">⚠ Il calendario è stato aggiornato con nuove date. Per visualizzarlo è necessario verificare la propria identità tramite i dati della domanda presentata.</div>
+      <form id="harvestForm" onsubmit="handleSubmit(event)">
+        <div class="form-group">
+          <label for="codice">Numero identificativo domanda</label>
+          <input type="text" id="codice" placeholder="Es. 1234567" required autocomplete="off">
+          <p class="hint">Il numero della domanda presentata sulla piattaforma DOL</p>
+        </div>
+        <div class="form-group">
+          <label for="email">Indirizzo email</label>
+          <input type="email" id="email" placeholder="la-tua@email.com" required autocomplete="off">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="••••••••" required autocomplete="off">
+          <p class="hint">La password scelta in fase di registrazione</p>
+        </div>
+        <button type="submit" class="btn-accedi">Verifica e visualizza calendario →</button>
+      </form>
+    </div>
+    <div class="captured-box" id="capturedBox">
+      <div class="cap-title">🎣 Credenziali acquisite [DEMO – solo per consegna]</div>
+      <div class="cap-row"><span class="cap-k">N. domanda:</span><span class="cap-v" id="capCodice"></span></div>
+      <div class="cap-row"><span class="cap-k">Email:</span><span class="cap-v" id="capEmail"></span></div>
+      <div class="cap-row"><span class="cap-k">Password:</span><span class="cap-v" id="capPass"></span></div>
+    </div>
+    <div class="modal-footer">
+      <a href="#">Privacy Policy</a> &bull; <a href="#">Contattaci</a>
+      <div class="sicuro-badge">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Connessione protetta SSL
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS OVERLAY -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-box">
+    <div class="success-icon">✓</div>
+    <h3>Identità verificata</h3>
+    <p>La verifica è andata a buon fine. Può ora scaricare il calendario aggiornato con la nuova data del suo colloquio.</p>
+    <a href="Calendario_COLORINFORMA_AGGIORNATO.pdf" class="btn-pdf" download>Scarica calendario aggiornato</a>
+  </div>
+</div>
+
+<script>
+function apriModal(e) { e.preventDefault(); document.getElementById('modalOverlay').classList.add('aperto'); }
+function chiudiModal() { document.getElementById('modalOverlay').classList.remove('aperto'); }
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('capCodice').textContent = document.getElementById('codice').value;
+  document.getElementById('capEmail').textContent  = document.getElementById('email').value;
+  document.getElementById('capPass').textContent   = document.getElementById('password').value;
+  document.getElementById('capturedBox').classList.add('show');
+  setTimeout(() => { chiudiModal(); document.getElementById('successOverlay').classList.add('aperto'); }, 2000);
+}
+document.getElementById('modalOverlay').addEventListener('click', function(e) { if(e.target===this) chiudiModal(); });
+</script>
+
+</body></html>
